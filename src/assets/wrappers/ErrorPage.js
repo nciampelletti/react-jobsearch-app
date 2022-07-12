@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const Wrapper = styled.main`
   text-align: center;
@@ -6,6 +6,7 @@ const Wrapper = styled.main`
     width: 90vw;
     max-width: 600px;
     display: block;
+    margin-top: 2rem;
     margin-bottom: 2rem;
   }
   display: flex;
@@ -24,6 +25,6 @@ const Wrapper = styled.main`
     text-decoration: underline;
     text-transform: capitalize;
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
