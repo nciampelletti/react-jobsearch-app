@@ -3,6 +3,7 @@ import { Logo } from "../components"
 import { useState, useEffect } from "react"
 import Wrapper from "../assets/wrappers/RegisterPage"
 import FormRow from "../components/FormRow"
+import { toast } from "react-toastify"
 
 const initialState = {
   name: "",
@@ -29,6 +30,7 @@ const Register = () => {
 
     if (!email || !password || (!isMember && !name)) {
       console.log("Please fill out all fields")
+      toast.error("Please fill out all fields")
     }
   }
 
