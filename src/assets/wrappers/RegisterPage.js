@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Wrapper = styled.section`
   display: grid;
@@ -7,6 +7,7 @@ const Wrapper = styled.section`
     display: block;
     margin: 0 auto;
     margin-bottom: 1.38rem;
+    width: 250px;
   }
   .form {
     max-width: 400px;
@@ -14,6 +15,12 @@ const Wrapper = styled.section`
   }
 
   h3 {
+    text-align: center;
+  }
+  h4 {
+    text-align: center;
+  }
+  h5 {
     text-align: center;
   }
   p {
@@ -30,6 +37,11 @@ const Wrapper = styled.section`
     color: var(--primary-500);
     cursor: pointer;
     letter-spacing: var(--letterSpacing);
+  }
+
+  span {
+    color: var(--primary-500);
+    text-transform: none;
   }
 `
 export default Wrapper
