@@ -4,6 +4,9 @@ import { useState, useEffect } from "react"
 import Wrapper from "../assets/wrappers/RegisterPage"
 import FormRow from "../components/FormRow"
 import { toast } from "react-toastify"
+import { useDispatch, useSelector } from "react-redux"
+import { loginUser, registerUser } from "../features/user/userSlice"
+import { useNavigate } from "react-router-dom"
 
 const initialState = {
   name: "",
@@ -14,6 +17,17 @@ const initialState = {
 
 const Register = () => {
   const [values, setValues] = useState(initialState)
+  const dispatch = useDispatch()
+  const { isLoading, user } = useSelector((store) => store.user)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/")
+      }, 3000)
+    }
+  }, [user, navigate])
 
   const handleChange = (e) => {
     const name = e.target.name
@@ -22,16 +36,18 @@ const Register = () => {
     setValues({ ...values, [name]: value })
   }
 
-  const onSubmit = (event) => {
-    event.preventDefault()
-    console.log(event.target)
-
+  const onSubmit = (e) => {
+    e.preventDefault()
     const { name, email, password, isMember } = values
-
     if (!email || !password || (!isMember && !name)) {
-      console.log("Please fill out all fields")
-      toast.error("Please fill out all fields")
+      toast.error("Please Fill Out All Fields")
+      return
     }
+    if (isMember) {
+      dispatch(loginUser({ email: email, password: password }))
+      return
+    }
+    dispatch(registerUser({ name, email, password }))
   }
 
   const toggleMember = () => {
@@ -68,8 +84,8 @@ const Register = () => {
             value={values.password}
             handleChange={handleChange}
           />
-          <button type='Submit' className='btn btn-block'>
-            Submit
+          <button type='Submit' className='btn btn-block' disabled={isLoading}>
+            {isLoading ? "loading ..." : "submit"}
           </button>
           <p>
             {values.isMember ? "Not a mamber yet?" : "Already a member?"}
@@ -89,7 +105,7 @@ const Register = () => {
             </div>
             <div className='form-row'>
               <label className='form-label'>
-                Password: <span>qweqwwq</span>
+                Password: <span>Natasha2022@</span>
               </label>
             </div>
           </div>
