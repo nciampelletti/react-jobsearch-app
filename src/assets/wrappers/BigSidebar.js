@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Wrapper = styled.aside`
   display: none;
@@ -60,6 +60,12 @@ const Wrapper = styled.aside`
     }
     .active .icon {
       color: var(--primary-500);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      width: 250px;
     }
   }
 `

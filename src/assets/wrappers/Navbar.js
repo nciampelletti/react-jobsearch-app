@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Wrapper = styled.nav`
   height: var(--nav-height);
@@ -6,11 +6,17 @@ const Wrapper = styled.nav`
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
-  .logo {
+  /* .logo {
     display: flex;
     align-items: center;
     width: 100px;
+  } */
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 250px;
   }
+
   .nav-center {
     display: flex;
     width: 90vw;
@@ -37,11 +43,12 @@ const Wrapper = styled.nav`
     gap: 0 0.5rem;
     position: relative;
     box-shadow: var(--shadow-2);
+    //padding: 1rem;
   }
 
   .dropdown {
     position: absolute;
-    top: 40px;
+    top: 40px; //was 40
     left: 0;
     width: 100%;
     background: var(--primary-100);
