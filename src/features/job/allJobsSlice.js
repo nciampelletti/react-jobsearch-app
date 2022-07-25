@@ -34,10 +34,6 @@ export const getAllJobs = createAsyncThunk(
 
       return resp.data
     } catch (error) {
-      // if (error.response.status === 401) {
-      //   thunkAPI.dispatch(logoutUser())
-      //   return thunkAPI.rejectWithValue("Unauthorised... Loging out...")
-      // }
       return thunkAPI.rejectWithValue(error.response.data.msg)
     }
   }
@@ -46,6 +42,14 @@ export const getAllJobs = createAsyncThunk(
 const allJobsSlice = createSlice({
   name: "allJobs",
   initialState,
+  reducers: {
+    showLoading: (state) => {
+      state.isLoading = true
+    },
+    hideLoading: (state) => {
+      state.isLoading = false
+    },
+  },
   extraReducers: {
     [getAllJobs.pending]: (state) => {
       state.isLoading = true
@@ -61,4 +65,5 @@ const allJobsSlice = createSlice({
   },
 })
 
+export const { showLoading, hideLoading } = allJobsSlice.actions
 export default allJobsSlice.reducer

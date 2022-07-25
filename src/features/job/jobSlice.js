@@ -3,6 +3,7 @@ import { toast } from "react-toastify"
 import { getUserFromLocalStorage } from "../../utils/localStorage"
 import { logoutUser } from "../user/userSlice"
 import customFetch from "../../utils/axios"
+import { showLoading, hideLoading, getAllJobs } from "./allJobsSlice"
 // import { createJobThunk, deleteJobThunk, editJobThunk } from './jobThunk';
 
 const initialState = {
