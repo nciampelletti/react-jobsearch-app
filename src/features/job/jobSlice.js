@@ -29,13 +29,33 @@ export const createJob = createAsyncThunk(
         },
       })
 
-      thunkAPI.dispatch(clearValues())
+      thunkAPI.dispatch(getAllJobs())
       return resp.data
     } catch (error) {
       if (error.respose.status === 401) {
         thunkAPI.dispatch(logoutUser())
         return thunkAPI.rejectWithValue("Unauthorised... Loging out...")
       }
+      return thunkAPI.rejectWithValue(error.response.data.msg)
+    }
+  }
+)
+
+export const deleteJob = createAsyncThunk(
+  "jobs/deleteJob",
+  async (jobId, thunkAPI) => {
+    thunkAPI.dispatch(showLoading())
+    try {
+      const resp = await customFetch.delete(`/jobs/${jobId}`, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+        },
+      })
+
+      thunkAPI.dispatch(getAllJobs())
+      return resp.data.msg
+    } catch (error) {
+      thunkAPI.dispatch(hideLoading())
       return thunkAPI.rejectWithValue(error.response.data.msg)
     }
   }
@@ -64,6 +84,14 @@ const jobSlice = createSlice({
       toast.success("Job Created")
     },
     [createJob.rejected]: (state, { payload }) => {
+      state.isLoading = false
+      toast.error(payload)
+    },
+    [deleteJob.fulfilled]: (state, { payload }) => {
+      state.isLoading = false
+      toast.success(payload)
+    },
+    [deleteJob.rejected]: (state, { payload }) => {
       state.isLoading = false
       toast.error(payload)
     },
