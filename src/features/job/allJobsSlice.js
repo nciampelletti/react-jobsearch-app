@@ -10,6 +10,13 @@ const initialFiltersState = {
   sortOptions: ["latest", "oldest", "a-z", "z-a"],
 }
 
+// const { isLoading, search, searchStatus, searchType, sort, sortOptions } =
+
+//   jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
+// jobType: "full-time",
+// statusOptions: ["interview", "declined", "pending"],
+// status: "pending",
+
 const initialState = {
   isLoading: false,
   jobs: [],
@@ -34,17 +41,6 @@ export const getAllJobs = createAsyncThunk(
     }
   }
 )
-
-// export const showStats = async (_, thunkAPI) => {
-//   try {
-//     const resp = await customFetch.get("/jobs/stats")
-
-//     console.log("after")
-//     return resp.data
-//   } catch (error) {
-//     return thunkAPI.rejectWithValue(error.response.data.msg)
-//   }
-// }
 
 export const showStats = createAsyncThunk(
   "allJobs/showStats",
