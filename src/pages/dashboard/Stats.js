@@ -1,8 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { showStats } from "../../features/job/allJobsSlice"
+import { showStats } from "../../features/job/allJobs"
 import { StatsContainer, ChartsContainer, Loading } from "../../components"
-import { months } from "moment"
 
 const Stats = () => {
   const { isLoading, monthlyApplications } = useSelector(

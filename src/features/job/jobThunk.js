@@ -1,4 +1,4 @@
-import { showLoading, hideLoading, getAllJobs } from "./allJobsSlice"
+import { showLoading, hideLoading, getAllJobs } from "./allJobs"
 import customFetch from "../../utils/axios"
 import { clearValues } from "./jobSlice"
 
