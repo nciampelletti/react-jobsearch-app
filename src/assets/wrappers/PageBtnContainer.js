@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Wrapper = styled.section`
   height: 6rem;
@@ -7,7 +7,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: end;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   .btn-container {
     background: var(--primary-100);
     border-radius: var(--borderRadius);
