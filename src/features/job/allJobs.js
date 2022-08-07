@@ -46,7 +46,7 @@ const allJobsSlice = createSlice({
     changePage: (state, { payload }) => {
       state.page = payload
     },
-    clearAllJobsState: () => initialState,
+    clearAllJobsState: (state) => initialState,
   },
   extraReducers: {
     [getAllJobs.pending]: (state) => {
