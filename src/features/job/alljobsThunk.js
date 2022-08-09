@@ -8,10 +8,8 @@ export const getAllJobsThunk = async (_, thunkAPI) => {
   if (search) {
     url = url + `&search=${search}`
   }
-
   try {
     const resp = await customFetch.get(url)
-
     return resp.data
   } catch (error) {
     return checkForUnauthorizedResponse(error, thunkAPI)
