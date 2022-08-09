@@ -66,6 +66,7 @@ const AddJobs = () => {
         })
       )
     }
+    //eslint-disable-next-line
   }, [])
 
   const handleJobInput = (event) => {
