@@ -65,7 +65,7 @@ const Wrapper = styled.aside`
     .logo {
       display: flex;
       align-items: center;
-      width: 250px;
+      width: 200px;
     }
   }
 `
