@@ -22,6 +22,8 @@ const Profile = () => {
       toast.error("please fillout all fields")
       return
     }
+
+    console.log(userData)
     dispatch(updateUser(userData))
   }
 

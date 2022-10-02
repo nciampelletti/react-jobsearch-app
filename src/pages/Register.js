@@ -87,7 +87,7 @@ const Register = () => {
           <button type='Submit' className='btn btn-block' disabled={isLoading}>
             {isLoading ? "loading ..." : "submit"}
           </button>
-          <button
+          {/* <button
             type='button'
             className='btn btn-block btn-hipster'
             disable={isLoading}
@@ -98,7 +98,7 @@ const Register = () => {
             }}
           >
             {isLoading ? "loading..." : "demo"}
-          </button>
+          </button> */}
           <p>
             {values.isMember ? "Not a mamber yet?" : "Already a member?"}
             <button type='button' className='member-btn' onClick={toggleMember}>
@@ -109,15 +109,15 @@ const Register = () => {
 
         {values.isMember && (
           <div className='form'>
-            <h5>Use test credentials or register:</h5>
+            <h5>You might use test credentials...</h5>
             <div className='form-row'>
               <label className='form-label'>
-                Email: <span>natashat@shaw.ca</span>
+                Email: <span>test@test.com</span>
               </label>
             </div>
             <div className='form-row'>
               <label className='form-label'>
-                Password: <span>Natasha2022@</span>
+                Password: <span>test1234</span>
               </label>
             </div>
           </div>

@@ -215,6 +215,7 @@ ul {
   padding: 2rem 2.5rem;
   margin: 3rem auto;
   transition: var(--transition);
+  box-shadow: 0 0.5rem 2rem rgba(58, 41, 41, 0.45);
 }
 .form:hover {
   box-shadow: var(--shadow-4);
@@ -309,6 +310,10 @@ ul {
 }
 .coffee-info a {
   color: var(--primary-500);
+}
+
+.logo {
+  height: 50px;
 }
 
 @media screen and (min-width: 992px) {

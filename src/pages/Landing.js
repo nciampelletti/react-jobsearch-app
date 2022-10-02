@@ -15,15 +15,16 @@ const Landing = () => {
         {/* info */}
         <div className='info'>
           <h1>
-            <span>Natalia</span> job <span>tracking</span>
+            <span>Natalia</span> Job <span>tracker</span>
           </h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-            corporis provident animi sequi. Temporibus non aut, sapiente
-            repellat tempore sint incidunt corporis odit. Quod voluptatum alias
-            aliquid molestias, cum, iure veritatis laudantium odit impedit error
-            iusto dolores asperiores sint quam nulla ipsam tenetur, facere
-            soluta illo natus aspernatur ipsa earum!
+            If you have trouble organizing your job-search process, then this
+            Job Tracker just might be the app you've been looking for. Job
+            Tracker aggregates job listings, so you can search for openings by
+            keyword and location. Then — and this is where Job Tracker is unique
+            — you can categorize jobs by priority: dream jobs, second-choice
+            jobs, and third-choice jobs. You can also file jobs into the various
+            stages of the job-search process.
           </p>
           <Link to='/register' className='btn btn-hero'>
             Login/Register

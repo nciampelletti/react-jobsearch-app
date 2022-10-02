@@ -12,6 +12,7 @@ const FormRow = ({ type, name, value, labeltext, handleChange }) => {
         value={value}
         onChange={handleChange}
         className='form-input'
+        autoComplete='on'
       />
     </div>
   )
